@@ -4,15 +4,29 @@ import { auth } from "./config.js"
 
 
 
-
+const para = document.querySelector("#para");
+const div = document.querySelector("#div")
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-console.log(uid)
-;
+      div.innerHTML=`
+                  <div class="dropdown m-3 mt-4">
+                    <button class="btn bg-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fs-3 text-light fa-solid fa-bars"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./student-form.html">Generate Form</a></li>
+                        <button id="btn" class="border border-light bg-white m-2">logout</button>
+                    </ul>
+                  </div>
+      `
+      console.log(uid);
+
+
     } else {
-      window.location="login.html"
+        para.innerHTML=
+        `<a href="./login.html">Login</a>`
     }
   });
 
