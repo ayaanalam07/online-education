@@ -18,7 +18,7 @@ signInWithEmailAndPassword(auth, email.value, password.value)
     const user = userCredential.user;
     console.log(user);
     alert("You Are Login")
-    window.location = "home.html"
+    window.location = "index.html"
 })
   .catch((error) => {
     const errorMessage = error.message;
